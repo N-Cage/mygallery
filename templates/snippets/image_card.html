@@ -1,0 +1,13 @@
+  {% if images %}
+  <div class="card" style="width: 18rem; ">
+      <img src="{{images.image.url}}" class="card-img-top" style="width: 285px; " alt="image">
+        <div class="card-body">
+          <h5 class="card-title">{{images.title}}</h5>
+          <p class="card-text">{{images.discription}}</p>
+          <small class="text-muted text-end">{{images.author}}</small>
+          <small class="text-muted text-end">{{images.date_published}}</small>
+        </div>
+  </div>
+{% endif %}
+
+

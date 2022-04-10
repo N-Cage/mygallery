@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    .blog-post-container{
+        position: relative;
+        margin-left: 130px;
+        margin-right: 100px;
+        
+        margin-top: 15px;
+	}
+</style>
+<div class="blog-post-container">
+    <div class="row" >
+        {% if images %}
+            {% for post in images %}
+                
+                    {% include 'snippets/image_card.html' with images=post %}
+                
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
+
+{% include 'snippets/image_card_pagination.html' %}
+
+{% endblock content %}

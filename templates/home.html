@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <body>
+  <div class="text-center" style="margin-top: 230px;">
+    <h1><a href="#" style="text-decoration: none; color:black">This Gallery is a place where you can store your pictues and find fresh inspiration</a></h1>
+
+    
+    <div style="position: relative; margin-top: 20px;">
+      {% if request.user.is_authenticated %}
+      <a href="{% url 'gallery' %}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Browse Gallery</a>
+      <a href="{% url 'upload_picture' %}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Upload Image</a>
+      {% else %}
+      <a href="{% url 'gallery' %}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Browse Gallery</a>
+      <a href="{% url 'login' %}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Upload Image</a>
+      {% endif %}
+    </div>
+    
+
+
+  </body>
+{% endblock content %}
