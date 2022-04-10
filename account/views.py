@@ -31,10 +31,6 @@ def logout_view(request):
 
 
 
-
-
-
-
 def login_view(request):
     context = {}
     

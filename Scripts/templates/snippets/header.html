@@ -1,0 +1,25 @@
+<title>Image Galery</title>
+    
+
+  <div class=" navbar navbar-dark bg-dark">
+    <div class="container">
+      <h5><a style="text-decoration: none; color: white;" href="{% url 'home' %}">Gallery </a></h5>
+
+      {% if request.user.is_authenticated %}
+        <div style="text-align: end; color:white;">
+          <h5 >Hello, {{request.user.username}} | <a href="{% url 'logout' %}" style="text-decoration: none; color:white;">Logout</a>
+          </h5>
+        </div>
+        
+
+
+      {% else %}
+        
+        <h5 style="text-decoration: none; color:white;"><a href="{% url 'register' %}" style="text-decoration: none; color:white; text-align: end;">Register</a> | <a href="{% url 'login' %}" style="text-decoration: none; color:white; text-align: end;">Login</a></h5>
+        </a>
+      
+      
+      {% endif %}
+    </div>
+
+  </div>

@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-*-=6c9mjwmoi8a%u@50@@g2+fahg(2xylg6uer&5s$ci5q&+=g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['gallery-crm1.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -84,11 +85,11 @@ WSGI_APPLICATION = 'image_gallery.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'imggal',
-        'USER': 'postgres',
-        'PASSWORD': 'superpassword',
-        'HOST': 'localhost',
-        'PORT': '',
+        'NAME': 'gallery_db',
+        'USER': 'superuser',
+        'PASSWORD': 'DBtestpassword',
+        'HOST': 'gallery-db.cmiivgfk968j.eu-central-1.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
