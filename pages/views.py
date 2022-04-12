@@ -6,7 +6,7 @@ from .forms import CreateImageCardForm
 from account.models import User
 from operator import attrgetter
 
-IMAGE_CARDS_PER_PAGE = 3
+IMAGE_CARDS_PER_PAGE = 6
 
 def home_page_view(request):
     return render(request, 'home.html')

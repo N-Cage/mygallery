@@ -5,7 +5,7 @@ from django.db.models.signals import post_delete, pre_save
 from django.dispatch import receiver
 
 def upload_location(instance, filename, **kwargs):
-    file_path = 'media_cdn/{author_id}/{title}-{filename}'.format(
+    file_path = 'static_cdn/{author_id}/{title}-{filename}'.format(
         author_id=str(instance.author.id), title=str(instance.title), filename=filename
         )
     return file_path
